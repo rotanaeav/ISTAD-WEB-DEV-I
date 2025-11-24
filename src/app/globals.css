@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-gradient: linear-gradient(120deg, #e0f2fe 0%, #bae6fd 50%, #f0f9ff 100%);
+  --glass-card: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --button-glass: rgba(14, 165, 233, 0.15);
+  --button-border: rgba(14, 165, 233, 0.3);
+}
+
+.dark {
+  --bg-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4c1d95 100%);
+  --glass-card: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
+  --button-glass: rgba(255, 255, 255, 0.15);
+  --button-border: rgba(255, 255, 255, 0.3);
+}
+
+body {
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  transition: background 0.5s ease;
+}
+
+
+.glass {
+  background: var(--glass-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.glass-button {
+  background: var(--button-glass);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--button-border);
+  transition: all 0.3s ease;
+}
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
