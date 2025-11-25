@@ -7,10 +7,27 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  createdAt: string;
+  createDate: string;
   scanCount: number;
 }
 
 export interface ApiError {
   error: string;
+}
+
+//user : 
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  avatar: string;
+  password?: string;
+}
+
+export interface AuthResponse {
+  success: boolean;
+  message: string;
+  token?: string;
+  user?: Omit<User, 'password'>; // Exclude password to frontend.
 }

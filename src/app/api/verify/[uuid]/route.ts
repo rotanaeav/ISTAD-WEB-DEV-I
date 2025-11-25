@@ -9,7 +9,7 @@ export async function GET(
   const getUuid = uuid;
 
   const existingData = await fetch(
-    "https://68ae84b2b91dfcdd62b9604a.mockapi.io/api/v1/product"
+    `${process.env.NEXT_PUBLIC_API_URL}/product`
   );
   const products = (await existingData.json()) as Product[];
   const product = products.find((p) => p.uuid === getUuid);
@@ -24,7 +24,7 @@ export async function GET(
   }
 
   await fetch(
-    `https://68ae84b2b91dfcdd62b9604a.mockapi.io/api/v1/product/${product.id}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/product/${product.id}`,
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
