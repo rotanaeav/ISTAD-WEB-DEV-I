@@ -14,7 +14,7 @@
 
 .dark {
   --bg-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4c1d95 100%);
-  --glass-card: rgba(255, 255, 255, 0.08);
+  --glass-card: rgba(255, 255, 255, 0.078);
   --glass-border: rgba(255, 255, 255, 0.15);
   --text-main: #ffffff;
   --text-muted: #94a3b8;

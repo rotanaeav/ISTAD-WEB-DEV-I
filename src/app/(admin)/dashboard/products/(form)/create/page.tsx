@@ -58,64 +58,64 @@ export default function CreateProduct() {
     return (
         <div className="max-w-3xl mx-auto mt-10">
             {/* Header */}
-            <div className="bg-white shadow rounded-lg p-6 border border-gray-200">
-                <h2 className="text-xl font-semibold text-gray-800">Create Product</h2>
-                <p className="text-sm text-gray-600">Fill in the form below.</p>
+            <div className="bg-white shadow rounded-lg p-6 border border-gray-200 dark:bg-[#ffffff14] dark:border-white/20">
+                <h2 className="text-xl font-semibold text-gray-800 dark:text-[#ffffff]">Create Product</h2>
+                <p className="text-sm text-gray-600 dark:text-[#94a3b8]">Fill in the form below.</p>
             </div>
 
             {/* FORM */}
             <form
                 onSubmit={handleSubmit}
-                className="bg-white shadow mt-6 rounded-lg p-8 border border-gray-200 space-y-8"
+                className="bg-white shadow mt-6 rounded-lg p-8 border border-gray-200 space-y-8 dark:bg-[#ffffff14] dark:border-white/20"
             >
                 <div>
-                    <h3 className="text-lg font-medium text-gray-800">
+                    <h3 className="text-lg font-medium text-gray-800 dark:text-[#ffffff]">
                         Product Information
                     </h3>
-                    <p className="text-sm text-gray-500">Basic details about your product.</p>
+                    <p className="text-sm text-gray-500 dark:text-[#94a3b8]">Basic details about your product.</p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-6 gap-6 mt-6">
                         <div className="sm:col-span-3">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-[#ffffff]">
                                 Product ID
                             </label>
                             <input
                                 type="text"
                                 name="productId"
                                 required
-                                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none"
                                 placeholder="EX: PROD-1001"
                             />
                         </div>
 
                         <div className="sm:col-span-3">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-[#ffffff]">
                                 Product Name
                             </label>
                             <input
                                 type="text"
                                 name="name"
                                 required
-                                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none"
                                 placeholder="EX: Premium Water Bottle"
                             />
                         </div>
 
                         <div className="sm:col-span-6">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-[#ffffff]">
                                 Description
                             </label>
                             <textarea
                                 name="description"
                                 required
                                 rows={3}
-                                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none"
                                 placeholder="Short product description..."
                             ></textarea>
                         </div>
 
                         <div className="sm:col-span-3">
-                            <label className="block text-sm font-medium text-gray-700">
+                            <label className="block text-sm font-medium text-gray-700 dark:text-[#ffffff]">
                                 Price ($)
                             </label>
                             <input
@@ -123,7 +123,7 @@ export default function CreateProduct() {
                                 name="price"
                                 step="0.1"
                                 required
-                                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                                className="mt-2 w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none"
                                 placeholder="12.99"
                             />
                         </div>
