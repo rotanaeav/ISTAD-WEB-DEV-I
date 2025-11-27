@@ -59,7 +59,7 @@ export default function ProductListPage() {
       <ProductTable
         products={filteredProducts} 
         loading={loading} 
-        onDelete={handleDelete} 
+        onDelete={handleDelete}
       />
     </div>
   );
