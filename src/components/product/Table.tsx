@@ -28,7 +28,6 @@ export default function ProductTable({ products, loading, onDelete }: ProductTab
     <div className="rounded-[24px] overflow-hidden border border-white/40 dark:border-white/5 bg-white/40 dark:bg-[#0f172a]/40 backdrop-blur-xl shadow-sm flex flex-col min-h-[600px]">
       <div className="overflow-x-auto flex-grow">
         <table className="w-full">
-          
           {/* Header */}
           <thead className="bg-white/50 dark:bg-white/5 border-b border-white/20">
             <tr>

@@ -10,10 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary)", 
+        primary: "var(--primary)",
         "glass-bg": "var(--glass-bg)",
         "glass-border": "var(--glass-border)",
-      },
+      }
     },
   },
   plugins: [],

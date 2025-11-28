@@ -135,7 +135,7 @@ export default function CreateProduct() {
                 <div className="flex justify-end">
                     <button
                         type="submit"
-                        className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-500 transition shadow"
+                        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition shadow-blue-500/30 shadow-md"
                     >
                         Create Product
                     </button>
@@ -143,9 +143,9 @@ export default function CreateProduct() {
             </form>
 
             {verifyUrl && (
-                <div className="mt-8 p-6 bg-white border rounded-lg shadow">
-                    <h3 className="text-lg font-semibold text-gray-800">QR Code</h3>
-                    <p className="text-sm text-gray-600 mb-4">
+                <div className="mt-8 p-6 bg-white dark:bg-[#ffffff14] dark:border-white/20 border rounded-lg shadow">
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-[#ffffff]">QR Code</h3>
+                    <p className="text-sm text-gray-600 mb-4 dark:text-[#94a3b8]">
                         Buyer will scan this QR to verify authenticity.
                     </p>
 
@@ -153,7 +153,7 @@ export default function CreateProduct() {
                         <QRCodeSVG value={verifyUrl} size={180} />
                     </div>
 
-                    <div className="mt-3 p-3 bg-gray-100 border rounded text-gray-800 font-mono break-all">
+                    <div className="mt-3 p-3 bg-gray-100 border rounded text-gray-800 font-mono break-all dark:bg-slate-950 dark:border-white/20 dark:text-[#ffffff]">
                         {verifyUrl}
                     </div>
                 </div>

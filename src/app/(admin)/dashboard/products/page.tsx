@@ -19,7 +19,7 @@ export default function ProductListPage() {
         // Sort by newest first
         const sorted = data.sort((a: Product, b: Product) => 
           Number(b.id) - Number(a.id)
-        );
+      );
         setProducts(sorted);
       } catch (error) {
         console.error("Failed to fetch products", error);
