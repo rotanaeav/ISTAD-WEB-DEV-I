@@ -17,7 +17,7 @@ export default function ProductToolbar({ searchTerm, setSearchTerm, totalCount }
           placeholder="Search by name or ID..." 
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-12 pr-4 py-3 rounded-xl bg-white/60 dark:bg-white/5 border border-white/40 dark:border-white/10 backdrop-blur-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-[var(--text-main)]"
+          className="w-full pl-12 pr-4 py-3 rounded-xl bg-white dark:bg-white/5 border border-white/40 dark:border-white/10 backdrop-blur-md focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-[var(--text-main)] shadow-sm"
         />
       </div>
       

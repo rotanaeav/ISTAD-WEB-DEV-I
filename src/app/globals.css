@@ -14,7 +14,7 @@
 
 .dark {
   --bg-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4c1d95 100%);
-  --glass-card: rgba(255, 255, 255, 0.08);
+  --glass-card: rgba(255, 255, 255, 0.078);
   --glass-border: rgba(255, 255, 255, 0.15);
   --text-main: #ffffff;
   --text-muted: #94a3b8;
@@ -28,7 +28,6 @@ body {
   min-height: 100vh;
   transition: background 0.5s ease;
 }
-
 
 .glass {
   background: var(--glass-card);
@@ -47,5 +46,5 @@ body {
 .glass-button:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
