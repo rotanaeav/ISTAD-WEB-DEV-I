@@ -31,3 +31,6 @@ export interface AuthResponse {
   token?: string;
   user?: Omit<User, 'password'>; // Exclude password to frontend.
 }
+export type AdminNavbarProps = {
+  onToggleSidebar?: () => void;
+};

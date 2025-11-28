@@ -43,9 +43,9 @@ export default function Sidebar() {
 
       <div className="flex-1 overflow-y-auto py-6 px-4">
         <div className="mb-6">
-          <p className="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
+          {/* <p className="px-4 text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
             Main
-          </p>
+          </p> */}
           <SidebarLink
             href=""
             icon={LayoutDashboard}
