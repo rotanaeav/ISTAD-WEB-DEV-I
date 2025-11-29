@@ -22,6 +22,7 @@ export default function EditProductPage() {
     price: 0,
     description: "",
   });
+  
 
   // 1. FETCH PRODUCT
   useEffect(() => {
@@ -83,18 +84,18 @@ export default function EditProductPage() {
       <div className="flex items-center gap-4">
         {/* UPDATED PATH: Back button goes to /dashboard/products */}
         <Link href="/dashboard/products">
-          <button className="p-2 rounded-xl bg-white/50 dark:bg-white/5 hover:bg-white/80 transition-colors border border-white/20">
+          <button className="p-2 rounded-xl bg-white dark:bg-white/5 hover:bg-white/80 transition-colors border border-white/20">
             <ArrowLeft className="w-5 h-5 text-[var(--text-main)]" />
           </button>
         </Link>
         <div>
           <h1 className="text-2xl font-bold text-[var(--text-main)]">Edit Product</h1>
-          <p className="text-sm text-[var(--text-muted)]">Editing ID: {id}</p>
+          <p className="text-sm text-[var(--text-muted)]">Basic details about your product.</p>
         </div>
       </div>
 
       {/* Form Card */}
-      <div className="p-8 rounded-[24px] bg-white/40 dark:bg-[#0f172a]/40 backdrop-blur-xl border border-white/40 dark:border-white/5 shadow-sm">
+      <div className="p-8 rounded-[24px] bg-white shadow  border border-gray-200 dark:bg-[#ffffff14] dark:border-white/20">
         
         {error && (
           <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/30 flex items-center gap-3 text-red-600 dark:text-red-400">
@@ -104,7 +105,16 @@ export default function EditProductPage() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-[var(--text-main)] ml-1">Product ID</label>
+            <input 
+              value={id || "No ID Found" }
+              readOnly 
+              className="w-full px-4 py-3 rounded-xl border border-gray-300  text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none"
+            />
+          </div>
+
+
           <div className="space-y-2">
             <label className="text-sm font-semibold text-[var(--text-main)] ml-1">Product Name</label>
             <input 
@@ -113,7 +123,7 @@ export default function EditProductPage() {
               required
               value={formData.name || ""}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-black/20 border border-white/20 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-[var(--text-main)]"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300  text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none transition-all text-[var(--text-main)]"
             />
           </div>
 
@@ -126,7 +136,7 @@ export default function EditProductPage() {
               required
               value={formData.price || 0}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-black/20 border border-white/20 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all text-[var(--text-main)]"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300  text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none transition-all text-[var(--text-main)]"
             />
           </div>
 
@@ -137,7 +147,7 @@ export default function EditProductPage() {
               rows={4}
               value={formData.description || ""}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-black/20 border border-white/20 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all resize-none text-[var(--text-main)]"
+              className="w-full px-4 py-3 rounded-xl border border-gray-300  text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none transition-all resize-none text-[var(--text-main)]"
             />
           </div>
 
