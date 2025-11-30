@@ -8,27 +8,16 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.3),transparent_40%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(139,92,246,0.3),transparent_40%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.2),transparent_60%)]"></div>
-          <div className="absolute inset-0 opacity-30" style={{
-            backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
-          }}></div>
+          
         </div>
-
-        {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-6 py-28">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 mb-8 px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-sm font-bold shadow-lg">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-            </div>
-            <h1 className="text-7xl md:text-8xl font-black mb-8 leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-purple-100">
-              About Us
-            </h1>
-            <p className="text-2xl md:text-3xl text-blue-100 leading-relaxed font-light max-w-4xl mx-auto">
-              Discover our commitment to excellence, innovation, and trusted partnerships in delivering world-class solutions.
-            </p>
-          </div>
+           
+        <div className="max-w-6xl mx-auto px-6 py-24 text-center">
+          <h1 className="text-6xl font-bold text-white mb-6">About Us</h1>
+          <p className="text-2xl text-white/90 max-w-3xl mx-auto">
+            Building innovative solutions that help businesses grow and succeed
+          </p>
         </div>
+     
 
         {/* Wave Bottom */}
         <div className="absolute bottom-0 left-0 right-0">
