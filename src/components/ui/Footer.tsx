@@ -39,7 +39,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/about" className="hover:text-blue-500 transition-colors flex items-center gap-2">
-                    Contact Us
+                   About Us
                   </Link>
                 </li>
               </ul>
@@ -64,24 +64,31 @@ export default function Footer() {
            <div>
   <h4 className="font-bold text-[var(--text-main)] mb-4">Supported By</h4>
   
-  <a href="https://www.cstad.edu.kh/academics/association-of-information-technology" className="flex items-center gap-3 p-2 rounded-2xl 
+ <a 
+  href="https://www.cstad.edu.kh/academics/association-of-information-technology" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="flex items-center gap-3 p-2 rounded-2xl 
     bg-white/50 dark:bg-white/5 
     border border-white/50 dark:border-white/10 
     backdrop-blur-sm 
     transition-all duration-300 
     hover:bg-white/80 dark:hover:bg-white/20 
     hover:shadow-xl hover:shadow-blue-500/20 
-    hover:scale-105 cursor-default"
-  >
-    <div className="w-14 h-14 rounded-full bg-blue-900/10 dark:bg-white/10 flex items-center justify-center overflow-hidden border border-white/20">
-       <img 
-         src="/istad.png" 
-         alt="ISTAD Logo" 
-         className="w-full h-full object-cover" 
-       />
-    </div>
-    <span className="font-bold text-lg text-[var(--text-main)]">ISTAD ASSOCIATE</span>
-  </a>
+    hover:scale-105 cursor-pointer w-fit"
+>
+  <div className="w-14 h-14 rounded-full bg-blue-900/10 dark:bg-white/10 flex items-center justify-center overflow-hidden border border-white/20 flex-shrink-0">
+     <img 
+       src="/istad.png" 
+       alt="ISTAD Logo" 
+       className="w-full h-full object-cover" 
+     />
+  </div>
+
+  <span className="font-bold text-lg text-[var(--text-main)] block md:hidden lg:block whitespace-nowrap pr-2">
+    ISTAD ASSOCIATE
+  </span>
+</a>
 </div>
           </div>
 
