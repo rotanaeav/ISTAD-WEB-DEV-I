@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import AnimatedBackground from "@/src/components/animate-ui/Animate-Background";
 import Typewriter from "@/src/components/ui/TypeWriter";
+import Logo from "@/src/components/Logo";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -47,7 +48,6 @@ export default function LoginPage() {
   };
 
   return (
-    // MAIN WRAPPER: bg-transparent allows the AnimatedBackground to show in both Light and Dark mode
     <div className="min-h-screen w-full flex overflow-hidden bg-transparent relative">
       
       <AnimatedBackground />
@@ -66,9 +66,7 @@ export default function LoginPage() {
             
             <div className="relative inline-flex items-center justify-center group">
                <div className="absolute inset-0 bg-blue-500 blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500 rounded-full animate-pulse"></div>
-               <div className="relative w-32 h-32 rounded-[2.5rem] bg-gradient-to-tr from-blue-600 to-purple-600 shadow-2xl shadow-blue-500/30 flex items-center justify-center transform group-hover:scale-105 transition-transform duration-500 hover:rotate-3">
-                  <ShieldCheck className="w-16 h-16 text-white" strokeWidth={2} />
-               </div>
+               <Logo />
             </div>
             
             <div className="space-y-4">
@@ -136,10 +134,8 @@ export default function LoginPage() {
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/80 to-transparent opacity-50"></div>
 
           <div className="text-center mb-8 space-y-2">
-  
-            <div className="inline-flex lg:hidden items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-purple-600 shadow-lg mb-6">
-               <ShieldCheck className="w-8 h-8 text-white" />
-            </div>
+  <div className="mx-auto flex mb-4 justify-center items-center"><Logo /></div>
+            
 
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[var(--text-main)]">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
