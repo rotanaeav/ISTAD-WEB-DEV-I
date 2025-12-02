@@ -17,18 +17,17 @@ export default function AdminLayout({
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex font-sans text-[var(--text-main)]">
-      {/* Desktop sidebar */}
+
       <div className="hidden lg:block">
         <Sidebar />
       </div>
 
-      {/* Mobile / Tablet sidebar (slide-in) */}
       <div
         className={`fixed inset-0 z-40 lg:hidden transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Dark overlay */}
+ 
         <div
           className="absolute inset-0 bg-black/40"
           onClick={closeSidebar}

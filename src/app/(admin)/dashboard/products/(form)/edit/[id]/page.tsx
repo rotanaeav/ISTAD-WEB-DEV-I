@@ -15,14 +15,14 @@ export default function EditProductPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
-  
+
   // Form State
   const [formData, setFormData] = useState<Partial<Product>>({
     name: "",
     price: 0,
     description: "",
   });
-  
+
 
   // 1. FETCH PRODUCT
   useEffect(() => {
@@ -65,8 +65,7 @@ export default function EditProductPage() {
 
       if (!res.ok) throw new Error("Failed to update product");
 
-      // UPDATED PATH: Redirects to /dashboard/products
-      router.push("/dashboard/products"); 
+      router.push("/dashboard/products");
     } catch (err) {
       setError("Something went wrong. Please try again.");
       setSaving(false);
@@ -79,10 +78,8 @@ export default function EditProductPage() {
 
   return (
     <div className="max-w-2xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      
-      {/* Header */}
+
       <div className="flex items-center gap-4">
-        {/* UPDATED PATH: Back button goes to /dashboard/products */}
         <Link href="/dashboard/products">
           <button className="p-2 rounded-xl bg-white dark:bg-white/5 hover:bg-white/80 transition-colors border border-white/20">
             <ArrowLeft className="w-5 h-5 text-[var(--text-main)]" />
@@ -94,9 +91,9 @@ export default function EditProductPage() {
         </div>
       </div>
 
-      {/* Form Card */}
+    
       <div className="p-8 rounded-[24px] bg-white shadow  border border-gray-200 dark:bg-[#ffffff14] dark:border-white/20">
-        
+
         {error && (
           <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/30 flex items-center gap-3 text-red-600 dark:text-red-400">
             <AlertCircle className="w-5 h-5" />
@@ -107,9 +104,9 @@ export default function EditProductPage() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
             <label className="text-sm font-semibold text-[var(--text-main)] ml-1">Product ID</label>
-            <input 
-              value={id || "No ID Found" }
-              readOnly 
+            <input
+              value={formData.productId || "No ID Found"}
+              readOnly
               className="w-full px-4 py-3 rounded-xl border border-gray-300  text-gray-900 dark:text-[#ffffff] shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-slate-950 dark:border-white/20 dark:focus:border-white/50 outline-none"
             />
           </div>
@@ -117,9 +114,9 @@ export default function EditProductPage() {
 
           <div className="space-y-2">
             <label className="text-sm font-semibold text-[var(--text-main)] ml-1">Product Name</label>
-            <input 
+            <input
               name="name"
-              type="text" 
+              type="text"
               required
               value={formData.name || ""}
               onChange={handleChange}
@@ -129,9 +126,9 @@ export default function EditProductPage() {
 
           <div className="space-y-2">
             <label className="text-sm font-semibold text-[var(--text-main)] ml-1">Price ($)</label>
-            <input 
+            <input
               name="price"
-              type="number" 
+              type="number"
               step="0.01"
               required
               value={formData.price || 0}
@@ -142,7 +139,7 @@ export default function EditProductPage() {
 
           <div className="space-y-2">
             <label className="text-sm font-semibold text-[var(--text-main)] ml-1">Description</label>
-            <textarea 
+            <textarea
               name="description"
               rows={4}
               value={formData.description || ""}
@@ -152,15 +149,14 @@ export default function EditProductPage() {
           </div>
 
           <div className="flex items-center gap-4 pt-4">
-            {/* UPDATED PATH: Cancel button goes to /dashboard/products */}
             <Link href="/dashboard/products" className="flex-1">
               <button type="button" className="w-full py-3.5 rounded-xl bg-slate-100 dark:bg-white/5 text-[var(--text-muted)] font-bold hover:bg-slate-200 dark:hover:bg-white/10 transition-colors">
                 Cancel
               </button>
             </Link>
-            
-            <button 
-              type="submit" 
+
+            <button
+              type="submit"
               disabled={saving}
               className="flex-1 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-lg shadow-blue-500/30 active:scale-95 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
             >

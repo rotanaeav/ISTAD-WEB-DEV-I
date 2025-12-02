@@ -5,6 +5,7 @@ import Link from "next/link";
 import NavLink from "../features/NavLink";
 import { Check, Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import Logo from "../Logo";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,17 +30,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
-        
-        <div className="flex items-center justify-start flex-1">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300">
-              <Check className="w-6 h-6" strokeWidth={3} />
-            </div>
-            <span className="font-bold text-xl tracking-tight text-[var(--text-main)] hidden sm:block">
-              Product Verify
-            </span>
-          </Link>
-        </div>
+          <Logo />
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block">
            <NavLink href="/" label="Home" />
@@ -76,7 +67,7 @@ export default function Navbar() {
             Home
           </Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-medium text-[var(--text-main)] hover:text-blue-500 transition-colors">
-            Contact Us
+            About Us
           </Link>
         </div>
       </div>

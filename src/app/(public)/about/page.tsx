@@ -1,42 +1,8 @@
 "use client"
-
-import { useState, useEffect } from "react"
+import Image from "next/image"
+import Typewriter from "@/src/components/ui/TypeWriter"
 import { ShieldCheck, Database, Zap, Users, Mail, MapPin, Send } from "lucide-react"
 
-const Typewriter = ({ text, speed = 100, pause = 2000 }: { text: string; speed?: number; pause?: number }) => {
-  const [displayedText, setDisplayedText] = useState("")
-  const [isDeleting, setIsDeleting] = useState(false)
-
-  useEffect(() => {
-    const handleTyping = () => {
-      const currentLength = displayedText.length
-      if (!isDeleting) {
-        if (currentLength < text.length) {
-          setDisplayedText(text.substring(0, currentLength + 1))
-        } else {
-          setTimeout(() => setIsDeleting(true), pause)
-          return
-        }
-      } else {
-        if (currentLength > 0) {
-          setDisplayedText(text.substring(0, currentLength - 1))
-        } else {
-          setIsDeleting(false)
-        }
-      }
-    }
-    const timer = setTimeout(handleTyping, isDeleting ? speed / 2 : speed)
-    return () => clearTimeout(timer)
-  }, [displayedText, isDeleting, text, speed, pause])
-
-  return (
-    <span className="inline">
-      {displayedText}
-
-      <span className="ml-1 inline-block w-[3px] h-[0.9em] align-middle bg-blue-500 animate-pulse rounded-full" />
-    </span>
-  )
-}
 
 const AnimatedText = ({ text }: { text: string }) => {
   return (
@@ -57,7 +23,6 @@ const AnimatedText = ({ text }: { text: string }) => {
     </span>
   )
 }
-
 const teamMembers = [
   { name: "EAV ROTANA", role: "Project Leader / Backend", image: "/team/rotana.jpg" },
   { name: "KEO MENGLONG", role: "Product Features", image: "/team/menglong.jpg" },
@@ -103,15 +68,15 @@ export default function AboutPage() {
         </div>
 
         <div className="relative">
-          <div className="text-center mb-16 space-y-3">
-            <h3 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 animate-in zoom-in duration-1000 [animation-delay:0ms]">
+          <div className="text-center mb-16 space-y-4">
+            <h3 className="text-4xl py-4 md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 animate-in zoom-in duration-1000 [animation-delay:0ms]">
               <AnimatedText text="Why Choose Us" />
             </h3>
             <p
               className="text-base text-[var(--text-muted)] animate-in fade-in duration-1000"
               style={{ animationDelay: "300ms", animationFillMode: "both" }}
             >
-              Core pillars of our technology.
+              We are committed to delivering a verification system that empowers consumers and protects brands.
             </p>
           </div>
 
@@ -164,7 +129,7 @@ export default function AboutPage() {
         <div>
           <div className="text-center mb-16 space-y-4">
            <h3 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 animate-in zoom-in duration-1000 [animation-delay:0ms]">
-              <AnimatedText text="Our Developer Team" />
+              <AnimatedText text="Our Dev Team" />
             </h3>
             <p className="text-[var(--text-muted)] text-base max-w-2xl mx-auto">
               A ISTAD team of passionate developers dedicated to building secure and reliable product verification solutions.
@@ -180,10 +145,12 @@ export default function AboutPage() {
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-white/20 dark:from-white/8 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"></div>
 
                 <div className="relative z-10 w-24 h-24 mb-4 rounded-full overflow-hidden border-2 border-white/60 dark:border-white/25 group-hover:border-blue-500/70 transition-all duration-400 shadow-lg dark:shadow-xl group-hover:shadow-blue-500/50 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-white/15 dark:to-white/8">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
+                  <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover"
+                  sizes="96px"
                   />
                 </div>
                 <h3 className="relative z-10 text-sm font-bold text-[var(--text-main)] text-center uppercase tracking-wide group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">

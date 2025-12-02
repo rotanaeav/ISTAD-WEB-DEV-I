@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Product } from "@/src/lib/types";
+import { notFound } from "next/navigation";
 
 export async function GET(
   req: NextRequest,
@@ -15,7 +16,7 @@ export async function GET(
   const product = products.find((p) => p.uuid === getUuid);
 
   if (!product) {
-    return NextResponse.json({ message: "Invalid QR code" }, { status: 404 });
+    return notFound();
   }
 
   // Check scan count
@@ -23,15 +24,21 @@ export async function GET(
     return NextResponse.redirect(new URL("/verify/failed", req.url));
   }
 
-  await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/product/${product.id}`,
-    {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ scanCount: product.scanCount + 1 }),
-    }
-  );
+  await fetch(`${process.env.NEXT_PUBLIC_API_URL}/product/${product.id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ scanCount: product.scanCount + 1 }),
+  });
 
-  // Redirect success
-  return NextResponse.redirect(new URL("/verify/success", req.url));
+  //  Save UUID inside secure cookie
+  const response = NextResponse.redirect(new URL("/verify/success", req.url));
+
+  response.cookies.set("uuid", uuid, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    path: "/",
+    maxAge: 60,
+  });
+
+  return response;
 }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Check, Github, Facebook, Send } from "lucide-react";
 import PoweredBy from "./PoweredBy";
+import Logo from "../Logo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,19 +16,11 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             {/*1*/}
             <div className="space-y-4">
-              <Link href="/" className="flex items-center gap-2 group w-fit">
-                <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300">
-                  <Check className="w-5 h-5" strokeWidth={3} />
-                </div>
-                <span className="font-bold text-lg tracking-tight text-[var(--text-main)]">
-                  Product Verify
-                </span>
-              </Link>
+              <Logo />
               <p className="text-sm text-[var(--text-muted)] leading-relaxed">
                 The global standard product authentication. Trust what you buy.
               </p>
             </div>
-
             {/*2*/}
             <div>
               <h4 className="font-bold text-[var(--text-main)] mb-4">Platform</h4>

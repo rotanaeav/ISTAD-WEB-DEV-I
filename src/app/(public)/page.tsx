@@ -1,5 +1,5 @@
 "use client";
-
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react'; 
 import { 
@@ -39,7 +39,7 @@ export default function LandingPage() {
          <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-purple-500/20 rounded-full blur-[128px] mix-blend-multiply dark:mix-blend-overlay dark:bg-purple-500/20"></div>
       </div>
 
-      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 flex flex-col justify-center h-full gap-24">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 flex flex-col justify-center h-full gap-20 md:gap-24">
  
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-8 text-center lg:text-left animate-fade-in-up">
@@ -116,28 +116,35 @@ export default function LandingPage() {
            </div>
         </div>
 
-        <div className="py-12 border-y border-white/20 dark:border-white/5">
-          <p className="text-center text-sm font-bold text-[var(--text-muted)] uppercase tracking-widest mb-8 opacity-70">
+        <div className="py-8 border-y border-white/20 dark:border-white/5">
+          <p className="text-center text-md font-bold text-[var(--text-muted)] uppercase tracking-widest mb-8 opacity-70">
             Trusted by Industry Leaders
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-20 md:gap-20 hover:text-blue-200  dark:hover:text-blue-300 transition-opacity duration-500">
-            <a className="flex items-center gap-2 group " href="https://istad.co/">
-              <img src="/istad.png" alt="ISTAD Logo" className="w-8 h-8 text-[var(--text-main)]" />
-              <span className="font-bold text-xl text-[var(--text-main)]">ISTAD</span>
-            </a>
-            <a className="flex items-center gap-2 group" href='#'>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center items-center gap-20 md:gap-20 hover:text-blue-200  dark:hover:text-blue-300 transition-opacity duration-500">
+            <a className="flex items-center justify-center gap-2 group" href='#'>
               <Building2 className="w-8 h-8 text-[var(--text-main)]" />
               <span className="font-bold text-xl text-[var(--text-main)]">EL-Tech Computer</span>
             </a>
           
-            <a className="flex items-center gap-2 group" href='#'>
+            <a className="flex items-center justify-center gap-2 group" href='#'>
               <Globe className="w-8 h-8 text-[var(--text-main)]" />
               <span className="font-bold text-xl text-[var(--text-main)]">World Logistics</span>
             </a>
-            <a className="flex items-center gap-2 group" href='#'>
+            <a className="flex items-center justify-center gap-2 group" href='#'>
               <ShoppingBag className="w-8 h-8 text-[var(--text-main)]" />
               <span className="font-bold text-xl text-[var(--text-main)]">RetailPro</span>
             </a>
+            <a className="flex items-center justify-center gap-2 group " href="https://istad.co/">
+  <div className="relative w-8 h-8">
+    <Image 
+      src="/istad.png" 
+      alt="ISTAD Logo" 
+      fill 
+      className="object-contain" 
+    />
+  </div>
+  <span className="font-bold text-xl text-[var(--text-main)]">ISTAD</span>
+</a>
           </div>
         </div>
 

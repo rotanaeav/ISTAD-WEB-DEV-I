@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronDown, LogOut, User } from "lucide-react";
@@ -46,13 +46,12 @@ export default function AdminNavbar({ onToggleSidebar }: AdminNavbarProps) {
 
   return (
     <header className="h-24 px-4 md:px-8 flex items-center justify-between bg-white/60 dark:bg-[#0f172a]/60 backdrop-blur-xl border-b border-white/20 dark:border-white/5 sticky top-0 z-30 transition-all">
-      {/* Hamburger button - only on mobile / tablet */}
       <button
         type="button"
         className="lg:hidden inline-flex items-center justify-center p-2 rounded-md border border-slate-300 dark:border-slate-700"
         onClick={onToggleSidebar}
       >
-        {/* simple icon (3 lines) */}
+
         <span className="sr-only">Toggle sidebar</span>
         <div className="space-y-1">
           <span className="block h-0.5 w-4 bg-slate-800 dark:bg-slate-100" />
@@ -118,7 +117,7 @@ export default function AdminNavbar({ onToggleSidebar }: AdminNavbarProps) {
 
               <div className="absolute right-0 mt-4 w-56 z-50 origin-top-right rounded-2xl bg-white/80 dark:bg-[#0f172a]/90 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-2xl animate-in fade-in zoom-in-95 slide-in-from-top-2 duration-200">
                 <div className="p-2 space-y-1">
-                  {/* Profile Item (Optional) */}
+              
                   <div className="px-4 py-3 border-b border-gray-100 dark:border-white/5 mb-1">
                     <p className="text-sm font-bold text-[var(--text-main)]">
                       Signed in as
@@ -129,8 +128,7 @@ export default function AdminNavbar({ onToggleSidebar }: AdminNavbarProps) {
                   </div>
 
                   <button className="w-full flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-xl text-[var(--text-main)] hover:bg-blue-50 dark:hover:bg-white/5 transition-colors">
-                    <User className="w-4 h-4" />
-                    Profile Settings
+                   <Link href="/profile">Profile Settings</Link>
                   </button>
 
                   <button
