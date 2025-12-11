@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://istad-web-dev-i.vercel.app';
+  const baseUrl = 'https://product-verify-web.rotana-dev.online';
 
   return [
     {
