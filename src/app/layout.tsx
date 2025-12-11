@@ -11,13 +11,18 @@ const kantumruy = Kantumruy_Pro({
 });
 
 export const metadata: Metadata = {
-  
+  title: {
+    default: "Product Verify - Trust What You Buy",
+    template: "%s | Product Verify",},
   metadataBase: new URL('https://product-verify-web.rotana-dev.online'), 
   verification: {
     google: "nBoWZ9ouVwSpUGWZ1QyLq-5G9wfVX0EG6IdEkEfIs1I"
   },
   keywords: ["product verification", "anti-counterfeit", "QR code scanner", 
-   "authenticity check", "ISTAD", "blockchain verification"],
+   "authenticity check", "ISTAD", "blockchain verification","secure products",
+   "genuine products", "product tracking", "supply chain security"],
+  description:
+    "Instantly verify product authenticity with our advanced QR tracking system. Ensure you're buying genuine products every time.",
   authors: [{ name: "ISTAD Team", url: "https://istad.co" }],
   creator: "ISTAD, Rotana Eav, Keo MengLong, Phann Monika, Prum Sakkda, Mot Na",
   openGraph: {  
@@ -25,7 +30,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://product-verify-web.rotana-dev.online",
     title: "Product Verify - Trust What You Buy",
-    description: "Instantly verify product authenticity with our advanced QR tracking system.",
+    description: "Instantly verify product authenticity with our advanced QR tracking system. Ensure you're buying genuine products every time.",
     siteName: "Product Verify",
     images: [
       {
