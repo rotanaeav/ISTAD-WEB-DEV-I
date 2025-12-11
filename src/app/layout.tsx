@@ -11,12 +11,16 @@ const kantumruy = Kantumruy_Pro({
 });
 
 export const metadata: Metadata = {
+  
   metadataBase: new URL('https://product-verify-web.rotana-dev.online'), 
+  verification: {
+    google: "nBoWZ9ouVwSpUGWZ1QyLq-5G9wfVX0EG6IdEkEfIs1I"
+  },
   keywords: ["product verification", "anti-counterfeit", "QR code scanner", 
    "authenticity check", "ISTAD", "blockchain verification"],
   authors: [{ name: "ISTAD Team", url: "https://istad.co" }],
   creator: "ISTAD, Rotana Eav, Keo MengLong, Phann Monika, Prum Sakkda, Mot Na",
-  openGraph: {
+  openGraph: {  
     type: "website",
     locale: "en_US",
     url: "https://product-verify-web.rotana-dev.online",
