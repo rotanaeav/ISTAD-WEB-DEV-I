@@ -97,10 +97,6 @@ bash
 npm install
 # or
 yarn install
-Configure Environment
-Create .env.local:
-
-NEXT_PUBLIC_API_URL=https://68ae84b2b91dfcdd62b9604a.mockapi.io/api/v1
 
 Run the development server
 
